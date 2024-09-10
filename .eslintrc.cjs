@@ -12,7 +12,7 @@ module.exports = getESLintConfig({
       'max-depth': ['warn', 4],
       complexity: ['warn'],
       'max-statements': ['warn'],
-      'callback-return': 0
+      'callback-return': 0,
     },
 
     overrides: [
@@ -30,7 +30,14 @@ module.exports = getESLintConfig({
           '@typescript-eslint/explicit-module-boundary-types': 0,
           '@typescript-eslint/no-unsafe-return': 0,
           '@typescript-eslint/no-unsafe-call': 0,
-          '@typescript-eslint/restrict-plus-operands': 0
+          '@typescript-eslint/restrict-plus-operands': 0,
+          'indent': 0,
+          'spaced-comment': 0,
+          'no-unused-expressions': 0,
+          'complexity': 0,
+          'no-undef': 0,
+          'quotes': 0,
+          'object-shorthand': 0,
         }
       }
     ]

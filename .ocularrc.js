@@ -25,5 +25,5 @@ export default {
     test: 'test/node.js',
     'test-browser': 'test/browser.js',
     size: ['test/size/all.js', 'test/size/map.js']
-  }
+  },
 };

@@ -1,7 +1,7 @@
 {
   "name": "@nurmdrafi/react-bkoi-gl",
   "description": "React components for Barikoi GL JS",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "keywords": [
     "barikoi",
     "bkoi-gl",
@@ -28,7 +28,8 @@
       "types": "./dist/exports-bkoi-gl.d.ts",
       "require": "./dist/exports-bkoi-gl.cjs",
       "import": "./dist/exports-bkoi-gl.js"
-    }
+    },
+    "./dist/style/react-bkoi-gl.css": "./dist/style/react-bkoi-gl.css"
   },
   "files": [
     "src",
@@ -38,7 +39,7 @@
   ],
   "scripts": {
     "typecheck": "tsc -p tsconfig.build.json --noEmit",
-    "build": "ocular-clean && ocular-build",
+    "build": "ocular-clean && ocular-build && node scripts/copy-css.js",
     "lint": "ocular-lint",
     "cover": "ocular-test cover",
     "test": "yarn typecheck && ocular-test",
@@ -47,7 +48,8 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@maplibre/maplibre-gl-style-spec": "^19.2.1"
+    "@maplibre/maplibre-gl-style-spec": "^19.2.1",
+    "@rollup/plugin-typescript": "^11.1.6"
   },
   "peerDependencies": {
     "@nurmdrafi/bkoi-gl": ">=1.0.4",
