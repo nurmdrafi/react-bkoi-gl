@@ -9,7 +9,7 @@ import {
   MapSourceDataEvent,
   MapWheelEvent,
   MapLibreZoomEvent as MapBoxZoomEvent
-} from 'maplibre-gl';
+} from '@nurmdrafi/bkoi-gl';
 import {ErrorEvent as _ErrorEvent, ViewStateChangeEvent as _ViewStateChangeEvent} from './events';
 
 export type {

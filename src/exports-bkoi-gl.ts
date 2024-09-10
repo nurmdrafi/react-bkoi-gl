@@ -12,7 +12,7 @@ import {
   NavigationControl as BkoiNavigationControl,
   ScaleControl as BkoiScaleControl
 } from '@nurmdrafi/bkoi-gl';
-import { MapStyle, AnyLayer, AnySource } from './types/style-spec-maplibre';
+import { MapStyle, AnyLayer, AnySource } from './types/style-spec-bkoi-gl';
 
 import { default as _Map, MapProps as _MapProps } from './components/map';
 import { default as _Marker, MarkerProps as _MarkerProps } from './components/marker';
@@ -42,7 +42,7 @@ import { default as _Source, SourceProps as _SourceProps } from './components/so
 import { useMap as _useMap } from './components/use-map';
 import type { MapRef as _MapRef } from './mapbox/create-ref';
 import type * as events from './types/events';
-import type { MapCallbacks } from './types/events-maplibre';
+import type { MapCallbacks } from './types/events-bkoi-gl';
 
 export function useMap() {
   return _useMap<BkoiMap>();
@@ -128,7 +128,7 @@ export type { default as Point } from '@mapbox/point-geometry';
 //   CanvasSource,
 //   VectorTileSource
 // } from 'maplibre-gl';
-export * from './types/style-spec-maplibre';
+export * from './types/style-spec-bkoi-gl';
 
 // Events
 export type {
@@ -143,7 +143,7 @@ export type {
   MapBoxZoomEvent,
   ErrorEvent,
   ViewStateChangeEvent
-} from './types/events-maplibre';
+} from './types/events-bkoi-gl';
 export type PopupEvent = events.PopupEvent<BkoiPopup>;
 export type MarkerEvent = events.MarkerEvent<BkoiMarker>;
 export type MarkerDragEvent = events.MarkerDragEvent<BkoiMarker>;
