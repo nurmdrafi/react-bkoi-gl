@@ -1,0 +1,77 @@
+{
+  "name": "@nurmdrafi/react-bkoi-gl",
+  "description": "React components for Barikoi GL JS",
+  "version": "1.1.0",
+  "keywords": [
+    "barikoi",
+    "bkoi-gl",
+    "react",
+    "react-bkoi-gl",
+    "react bkoi"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nurmdrafi/react-bkoi-gl.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./bkoi-gl": {
+      "types": "./dist/exports-bkoi-gl.d.ts",
+      "require": "./dist/exports-bkoi-gl.cjs",
+      "import": "./dist/exports-bkoi-gl.js"
+    }
+  },
+  "files": [
+    "src",
+    "dist",
+    "bkoi-gl",
+    "README.md"
+  ],
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.build.json --noEmit",
+    "build": "ocular-clean && ocular-build",
+    "lint": "ocular-lint",
+    "cover": "ocular-test cover",
+    "test": "yarn typecheck && ocular-test",
+    "test-fast": "yarn typecheck && ocular-test node",
+    "metrics": "ocular-metrics"
+  },
+  "dependencies": {
+    "@maplibre/maplibre-gl-style-spec": "^19.2.1",
+    "@types/mapbox-gl": ">=1.0.0"
+  },
+  "peerDependencies": {
+    "mapbox-gl": ">=1.13.0",
+    "@nurmdrafi/bkoi-gl": ">=1.0.4",
+    "react": ">=16.3.0",
+    "react-dom": ">=16.3.0"
+  },
+  "peerDependenciesMeta": {
+    "mapbox-gl": {
+      "optional": true
+    },
+    "@nurmdrafi/bkoi-gl": {
+      "optional": true 
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^16.0.0",
+    "jsdom": "^16.5.0",
+    "mapbox-gl": "^2.14.0",
+    "@nurmdrafi/bkoi-gl": ">=1.0.4",
+    "ocular-dev-tools": "2.0.0-alpha.15",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-test-renderer": "^18.0.0",
+    "typescript": "^4.0.0"
+  }
+}
