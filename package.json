@@ -1,7 +1,7 @@
 {
   "name": "@nurmdrafi/react-bkoi-gl",
   "description": "React components for Barikoi GL JS",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "keywords": [
     "barikoi",
     "bkoi-gl",
@@ -43,15 +43,15 @@
     "cover": "ocular-test cover",
     "test": "yarn typecheck && ocular-test",
     "test-fast": "yarn typecheck && ocular-test node",
-    "metrics": "ocular-metrics"
+    "metrics": "ocular-metrics",
+    "prepare": "husky"
   },
   "dependencies": {
-    "@maplibre/maplibre-gl-style-spec": "^19.2.1",
-    "@types/mapbox-gl": ">=1.0.0"
+    "@maplibre/maplibre-gl-style-spec": "^19.2.1"
   },
   "peerDependencies": {
-    "mapbox-gl": ">=1.13.0",
     "@nurmdrafi/bkoi-gl": ">=1.0.4",
+    "mapbox-gl": "^1.13.0",
     "react": ">=16.3.0",
     "react-dom": ">=16.3.0"
   },
@@ -60,18 +60,20 @@
       "optional": true
     },
     "@nurmdrafi/bkoi-gl": {
-      "optional": true 
+      "optional": true
     }
   },
   "devDependencies": {
-    "@types/react": "^16.0.0",
-    "jsdom": "^16.5.0",
-    "mapbox-gl": "^2.14.0",
+    "@commitlint/cli": "^19.4.1",
+    "@commitlint/config-conventional": "^19.4.1",
     "@nurmdrafi/bkoi-gl": ">=1.0.4",
+    "@types/mapbox-gl": "^3.4.0",
+    "@types/react": "^16.0.0",
+    "husky": "^9.1.5",
+    "mapbox-gl": "^1.13.3",
     "ocular-dev-tools": "2.0.0-alpha.15",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-test-renderer": "^18.0.0",
     "typescript": "^4.0.0"
   }
 }
