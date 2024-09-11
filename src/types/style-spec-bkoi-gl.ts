@@ -20,7 +20,9 @@ import type {
   RasterDEMSourceSpecification as RasterDemSource
 } from '@maplibre/maplibre-gl-style-spec';
 
-import type {CanvasSourceSpecification as CanvasSourceRaw} from '@nurmdrafi/bkoi-gl';
+// @ts-ignore
+// eslint-disable-next-line import/no-unresolved
+import {CanvasSourceSpecification as CanvasSourceRaw} from 'bkoi-gl';
 
 // Layers
 export type {

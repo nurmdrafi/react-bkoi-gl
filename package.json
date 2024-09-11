@@ -1,7 +1,7 @@
 {
   "name": "@nurmdrafi/react-bkoi-gl",
   "description": "React components for Barikoi GL JS",
-  "version": "1.2.1",
+  "version": "1.3.7",
   "keywords": [
     "barikoi",
     "bkoi-gl",
@@ -29,7 +29,10 @@
       "require": "./dist/exports-bkoi-gl.cjs",
       "import": "./dist/exports-bkoi-gl.js"
     },
-    "./dist/style/react-bkoi-gl.css": "./dist/style/react-bkoi-gl.css"
+    "./styles": {
+      "import": "./dist/styles/react-bkoi-gl.css",
+      "default": "./dist/styles/react-bkoi-gl.css"
+    }
   },
   "files": [
     "src",
@@ -49,30 +52,21 @@
   },
   "dependencies": {
     "@maplibre/maplibre-gl-style-spec": "^19.2.1",
-    "@rollup/plugin-typescript": "^11.1.6"
+    "@rollup/plugin-typescript": "^11.1.6",
+    "bkoi-gl": ">=2.0.0",
+    "mapbox-gl": "^1.13.0"
   },
   "peerDependencies": {
-    "@nurmdrafi/bkoi-gl": ">=1.0.4",
-    "mapbox-gl": "^1.13.0",
     "react": ">=16.3.0",
     "react-dom": ">=16.3.0"
-  },
-  "peerDependenciesMeta": {
-    "mapbox-gl": {
-      "optional": true
-    },
-    "@nurmdrafi/bkoi-gl": {
-      "optional": true
-    }
   },
   "devDependencies": {
     "@commitlint/cli": "^19.4.1",
     "@commitlint/config-conventional": "^19.4.1",
-    "@nurmdrafi/bkoi-gl": ">=1.0.4",
+    "bkoi-gl": ">=2.0.0",
     "@types/mapbox-gl": "^3.4.0",
     "@types/react": "^16.0.0",
     "husky": "^9.1.5",
-    "mapbox-gl": "^1.13.3",
     "ocular-dev-tools": "2.0.0-alpha.15",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

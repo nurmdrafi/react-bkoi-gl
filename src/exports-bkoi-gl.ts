@@ -11,7 +11,9 @@ import {
   GeolocateControl as BkoiGeolocateControl,
   NavigationControl as BkoiNavigationControl,
   ScaleControl as BkoiScaleControl
-} from '@nurmdrafi/bkoi-gl';
+  // @ts-ignore
+// eslint-disable-next-line import/no-unresolved
+} from 'bkoi-gl';
 import { MapStyle, AnyLayer, AnySource } from './types/style-spec-bkoi-gl';
 
 import { default as _Map, MapProps as _MapProps } from './components/map';
@@ -50,7 +52,9 @@ export function useMap() {
 
 export type MapProps = _MapProps<MapOptions, MapStyle, MapCallbacks, BkoiMap>;
 export type MapRef = _MapRef<BkoiMap>;
-const mapLib = import('@nurmdrafi/bkoi-gl');
+// @ts-ignore
+// eslint-disable-next-line import/no-unresolved
+const mapLib = import('bkoi-gl');
 export const Map = (() => {
   return React.forwardRef(function Map(props: MapProps, ref: React.Ref<MapRef>) {
     return _Map<MapOptions, MapStyle, MapCallbacks, BkoiMap>(props, ref, mapLib);

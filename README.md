@@ -1,4 +1,4 @@
-<h1 align="center">react-bkoi-gl | <a href="https://visgl.github.io/react-bkoi-gl">Docs</a></h1>
+<h1 align="center">react-bkoi-gl | <a href="https://docs.barikoi.com/npm/npm-intro">Docs</a></h1>
 
 ## Description
 
@@ -10,30 +10,27 @@ Using `react-bkoi-gl` requires `react >= 16.3`.
 
 To install the package via npm, run the following command:
 ```bash
-npm install react-bkoi-gl mapbox-gl
+npm install react-bkoi-gl
 ```
 Or via yarn:
 ```bash
-yarn add react-bkoi-gl mapbox-gl
+yarn add react-bkoi-gl
 ```
 
 ### Example
 
 ```js
-// Import Components
 import { useRef } from 'react';
-import { Map } from 'react-bkoi-gl';
+import { Map, FullscreenControl, GeolocateControl, NavigationControl, ScaleControl } from 'react-bkoi-gl';
 
 // Import Styles
-import "mapbox-gl/dist/mapbox-gl.css"
+import "react-bkoi-gl/styles"
 
 const App = () => {
-  const BARIKOI_API_KEY = 'YOUR_API_KEY';
+  const BARIKOI_API_KEY = 'YOUR_API_KEY'
+  const mapStyle = `https://map.barikoi.com/styles/osm-liberty/style.json?key=${BARIKOI_API_KEY}`
+  const mapContainer = useRef(null);
   const mapRef = useRef(null);
-  const mapStyles = {
-    title: 'OSM Liberty',
-    uri: `https://map.barikoi.com/styles/osm-liberty/style.json?key=${BARIKOI_API_KEY}`,
-  }
   const initialViewState = {
     longitude: 90.36402,
     latitude: 23.823731,
@@ -47,24 +44,32 @@ const App = () => {
 
   return (
     <div
-      style={{
-        display: "flex",
-        width: "100%",
-        height: "100%",
-        position: "absolute",
-      }}
+      ref={mapContainer} style={containerStyles}
     >
       <Map
         ref={mapRef}
-        mapStyle={mapStyles.uri}
+        mapStyle={mapStyle}
         style={{ width: "100%", height: "100%" }}
         initialViewState={initialViewState}
         doubleClickZoom={false}
         dragRotate={false}
         attributionControl={false}
-      />
+      >
+        <GeolocateControl position="top-right" />
+        <FullscreenControl position="top-right" />
+        <NavigationControl position="top-right" />
+        <ScaleControl position="bottom-right" />
+      </Map>
     </div>
   )
+}
+
+// JSX Styles
+const containerStyles = {
+  width: "100%",
+  height: "100vh",
+  minHeight: "400px",
+  overflow: "hidden",
 }
 
 export default App

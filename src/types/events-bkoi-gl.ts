@@ -9,7 +9,9 @@ import {
   MapSourceDataEvent,
   MapWheelEvent,
   MapLibreZoomEvent as MapBoxZoomEvent
-} from '@nurmdrafi/bkoi-gl';
+  // @ts-ignore
+// eslint-disable-next-line import/no-unresolved
+} from 'bkoi-gl';
 import {ErrorEvent as _ErrorEvent, ViewStateChangeEvent as _ViewStateChangeEvent} from './events';
 
 export type {
